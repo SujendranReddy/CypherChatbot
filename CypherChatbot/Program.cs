@@ -13,7 +13,29 @@ namespace CypherChatbot
             PlayIntroductionAudio("Cypher Chatbot.wav");
 
             Console.Title = "Cypher - Your Cybersecurity Companion";
+            Console.ForegroundColor = ConsoleColor.Blue;
+            Console.WriteLine(@"
+_________                  .__                     
+\_   ___ \  ___.__.______  |  |__    ____  _______ 
+/    \  \/ <   |  |\____ \ |  |  \ _/ __ \ \_  __ \\
+\     \____ \___  ||  |_> >|   Y  \  ___/  |  | \/
+ \______  / / ____||   __/ |___|  /\___  > |__|   
+        \/  \/     |__|         \/     \/        
+");
         }
+
+        static void AskNameAndGreet(out string userName)
+        {
+            Console.ForegroundColor = ConsoleColor.Green;
+            Console.WriteLine("Cypher: What’s your name? ");
+            Console.ForegroundColor = ConsoleColor.White;
+            userName = Console.ReadLine()?.Trim();
+
+            Console.ForegroundColor = ConsoleColor.Magenta;
+            Console.WriteLine($"\nHello, {userName}! I’m Cypher, your online safety buddy. Let’s keep the web safe together!\n\n");
+
+        }
+
 
         static void PlayIntroductionAudio(string filePath)
         {
